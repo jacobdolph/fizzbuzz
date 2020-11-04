@@ -27,21 +27,11 @@ function fizzBuzz(inputOne, inputTwo, container) {
     let printOutArray = []
 
     for (i = 1; i <= 100; i++) {
-        if (i % inputOne == 0 && i % inputTwo == 0) {
-
-            printOutArray.push("FizzBuzz")
-        } else if (i % inputTwo == 0) {
-
-            printOutArray.push("Buzz")
-        } else if (i % inputOne == 0) {
-
-            printOutArray.push("Fizz")
-        } else {
-            printOutArray.push(i)
-
-        }
+        (i % inputOne == 0 && i % inputTwo == 0)
+            ? printOutArray.push("FizzBuzz") : (i % inputTwo == 0)
+                ? printOutArray.push("Buzz") : (i % inputOne == 0)
+                    ? printOutArray.push("Fizz") : printOutArray.push(i)
     }
     container.innerHTML = printOutArray.join(", ")
-
 }
 
